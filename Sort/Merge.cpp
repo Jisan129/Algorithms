@@ -1,11 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
+int elements[1000],newElements[1000];
 
-void mergeList(int elements[1000], int first, int mid,int last);
+void mergeList( int first, int mid, int last) {
 
-void mergeList(int *elements, int first, int mid, int last) {
-
-    int newElements[1000],i=first,j=mid+1,k=0;
+    int i=first,j=mid+1,k=first;
     while (i<=mid&&j<=last){
         if(elements[i]>elements[j]){
             newElements[k++]=elements[j++];
@@ -19,16 +18,20 @@ void mergeList(int *elements, int first, int mid, int last) {
     for ( ; j <=last ; j++) {
         newElements[k++]=elements[j];
     }
+    for ( i = first; i <=last ; i++) {
+        elements[i]=newElements[i];
+    }
+
 
 }
 
-void mergeSort(int elements[100], int first, int last) {
+void mergeSort( int first, int last) {
 
-    int mid=(first+last)/2;
-    if(first!=last){
-        mergeSort(elements,first,mid);
-        mergeSort(elements,mid+1,last);
-        mergeList(elements,first,mid,last);
+    if(first<last){
+        int mid=(first+last)/2;
+        mergeSort(first,mid);
+        mergeSort(mid+1,last);
+        mergeList(first,mid,last);
 
     }
 
@@ -36,18 +39,17 @@ void mergeSort(int elements[100], int first, int last) {
 }
 
 int main() {
-int a,elements[100];
+int a;
 cin>>a;
     for (int i = 0; i < a; i++) {
         cin>>elements[i];
     }
 
 
-    mergeSort(elements,0,a);
-
+    mergeSort(0,a-1);
+    for (int i = 0; i < a; i++) {
+        cout<<elements[i]<<" ";
+    }
 
 
 }
-
-
-
