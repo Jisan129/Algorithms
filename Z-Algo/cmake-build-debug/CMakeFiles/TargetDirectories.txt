@@ -1,0 +1,3 @@
+D:/Semester 2-2/Algorithoms/Lab Works/Z-Algo/cmake-build-debug/CMakeFiles/Z_Algo.dir
+D:/Semester 2-2/Algorithoms/Lab Works/Z-Algo/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Semester 2-2/Algorithoms/Lab Works/Z-Algo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

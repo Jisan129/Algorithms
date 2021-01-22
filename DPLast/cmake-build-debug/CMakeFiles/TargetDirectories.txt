@@ -1,0 +1,3 @@
+D:/Semester 2-2/Algorithoms/Lab Works/DPLast/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Semester 2-2/Algorithoms/Lab Works/DPLast/cmake-build-debug/CMakeFiles/DPLast.dir
+D:/Semester 2-2/Algorithoms/Lab Works/DPLast/cmake-build-debug/CMakeFiles/edit_cache.dir

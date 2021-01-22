@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Semester 2-2/Algorithoms/Lab Works/Divide and Conquer/main.cpp
+bits/stdc++.h
+-
+iostream
+-
+vector
+-
+
