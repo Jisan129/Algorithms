@@ -1,0 +1,25 @@
+https://www.hackerrank.com/challenges/lonely-integer/problem
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int a[101];
+
+int lonelyInteger(int elements[101],int size) {
+    int temp=0;
+    for (int i = 0; i <size;i++){
+        temp ^= elements[i];
+    }
+    return temp;
+}
+
+int main() {
+    int res,size;
+    cin>>size;
+    for(int i=0;i<size;i++){
+        cin>>a[i];
+    }
+    res=lonelyInteger(a,size);
+    cout<<res;
+    return 0;
+}
