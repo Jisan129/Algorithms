@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int a[101];
+
+int lonelyInteger(int elements[101],int size) {
+    int temp=0;
+    for (int i = 0; i <size;i++){
+        temp ^= elements[i];
+    }
+    return temp;
+}
+
+int main() {
+    int left,right,result=-3;
+    cin>>left>>right;
+    for(int i = left; i <=right;i++){
+        for(int j =left; j <= right;j++){
+            result=max(result,i^j);
+        }
+    }
+    cout<<result;
+    return 0;
+}
