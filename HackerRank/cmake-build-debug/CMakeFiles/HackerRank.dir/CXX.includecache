@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/jisananam/C48458B38458A9A6/Problem Solving/Algorithms/HackerRank/main.cpp
+bits/stdc++.h
+-
+bits/stdc++.h
+-
+
