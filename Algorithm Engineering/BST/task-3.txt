@@ -1,0 +1,85 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+struct Node
+{
+    int key;
+    struct Node *left, *right;
+};
+
+struct Node *newNode(int item)
+{
+    struct Node *temp =  new Node;
+    temp->key = item;
+    temp->left = temp->right = NULL;
+    return temp;
+}
+
+void inorder(struct Node *root)
+{
+    if (root != NULL)
+    {
+        inorder(root->left);
+        printf("%d ", root->key);
+        inorder(root->right);
+    }
+}
+
+struct Node* insert(struct Node* node, int key)
+{
+    if (node == NULL) return newNode(key);
+
+    if (key < node->key)
+    {
+        Node *lchild = insert(node->left, key);
+        node->left  = lchild;
+    }
+    else if (key > node->key)
+    {
+        Node *rchild = insert(node->right, key);
+        node->right  = rchild;
+    }
+    return node;
+}
+struct Node* findMutualParent(int low,int high,struct Node* root){
+    if(low < root->key && high < root->key)
+        findMutualParent(low,high,root->left);
+    else if(low > root->key && high > root->key)
+        findMutualParent(low,high,root->right);
+    else
+        return root;
+}
+int findMax(int low,int high,struct Node* root){
+    struct Node* mutualRoot= findMutualParent(low,high,root);
+    struct Node* maxNode=mutualRoot;
+    while (maxNode->key< high){
+        if(maxNode->right != NULL){
+            maxNode=maxNode->right;
+        }
+    }
+    return maxNode->key;
+}
+int main()
+{
+    struct Node *root = NULL;
+    int n;
+    scanf("%d",&n);
+    if(n!=-1)
+        root = insert(root, n);
+    while(1){
+        scanf("%d",&n);
+        if(n==-1)
+            break;
+        insert(root,n);
+    }
+    int testCase;
+    cin >> testCase;
+    while (testCase--){
+        int low,high;
+        cin >>low;
+        cin>>high;
+        int max=findMax(low,high,root);
+        cout<<max<<"\n";
+    }
+    return 0;
+}
