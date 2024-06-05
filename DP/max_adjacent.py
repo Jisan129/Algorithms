@@ -1,15 +1,17 @@
-def rob(self, nums: List[int]) -> int:
-            arr=nums
-            max_arr=[0]*len(arr)
-            max_arr[0]=arr[0]
-            max_arr[1]=arr[1]
-            for i in range(2,len(arr)):
-                max_arr[i]=max(max_arr[i-1],max_arr[i-2]+arr[i])
+def rob( nums) -> int:
+        if len(nums)>2:
+            first=nums[0]
+            second=max(nums[0],nums[1])
             
-            return max_arr[-1]
-                
-
-
-
+            for i in range(2,len(nums)):
+                current=max(second,first+nums[i])
+                first=second
+                second=current
+            return current
+        else:
+            cur=-100
+            for i in range (len(nums)):
+                cur=max(cur,nums[i])
+                return cur
 
 print(rob([2,1,1,2]))
